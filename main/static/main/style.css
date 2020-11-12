@@ -1,0 +1,54 @@
+body{
+    background-color: black;
+    color: #ffffff;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar Section*/
+.navbar {  
+    background: #32a8a4;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar-toggler-icon {
+    color: #ffffff;
+}
+
+.nav-link {
+    color: #ffffff;
+    transition: 0.2s;
+    font-size: 18px;
+}
+
+.navbar-brand, .navbar-brand:hover {
+    color: #ffffff;
+    /* font-family: 'Sacramento', cursive; */
+    font-family: 'Bebas Neue', cursive;
+    font-size: 24px;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+/* Footer Section */
+.footer {
+    background:#5732a8;
+    color: #ffffff;
+    font-family: 'Sacramento', cursive;
+}
+
+.social a {
+    color: white;
+    font-size: 20px;
+    transition: 0.2s;
+}
+
+.social a:hover {
+    opacity: 0.8;
+    transition: 0.2s;
+}

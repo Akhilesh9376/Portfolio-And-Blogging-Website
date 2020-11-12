@@ -1,0 +1,46 @@
+{% extends 'main/index.html' %}
+
+{% block title %}Mysite | Blog{% endblock %}
+
+{% block main-content %}
+<div class="container">
+    <h1 class="text-center mt-5"><b>All Posts</b></h1>
+
+    <div class="mt-5">
+        {% for post in page_obj %}
+            <h2><a href="{% url 'post' post.id %}" class="text-body">{{ post.title }}</a></h2>
+            <p class="text-muted"><small>{{ post.posted_date|date:"F d, Y" }}</small></p><hr>
+        
+        {% endfor %}
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row mt-5 mb-n2">
+        <div class="col-12 text-center text-muted">
+            <p><span>Showing page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span></p>
+        </div>
+    </div>
+
+    <ul class="pagination pagination-sm mb-5 justify-content-center">
+        {% if page_obj.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+        {% endif %}
+
+        {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+                <li class="page-item active"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+            {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a></li>
+        {% endif %}
+    </ul>
+</div>
+{% endblock %}

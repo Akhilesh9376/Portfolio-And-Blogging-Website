@@ -1,0 +1,121 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Mysite | Home{% endblock %}
+
+{% block content %}
+
+<!-- Navbar section -->
+<nav class="navbar navbar-expand-md">
+    <!-- Brand -->
+    <a class="navbar-brand ml-2 ml-lg-5" style="color: #d20ce4;">Akhilesh Yadav</a>
+  
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <i class="navbar-toggler-icon fas fa-bars"></i>
+    </button>
+  
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-lg-auto ml-2 mr-lg-5">
+            <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'blog' %}">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+{% block main-content %}
+<div class="container">
+    <div class="row mt-5 mb-5">
+
+        <div class="col-lg-2 col-md-6 col-sm-6">
+            <img src="{% static 'main/images/Akhil.jpg' %}" alt="My photo" class="img-fluid rounded" width="240px">
+        </div>
+
+        <div class="col-lg-10 col-md-6 col-sm-6">
+            <h1>Akhilesh Yadav</h1>
+            <p style="font-size: large;">Hi ! Everyone This is Akhilesh Yadav From Gorakhpur-UttarPradesh.My Hobby Is To Playing Cricket.I m Student Of InFromation Technology Of B.tech Department From Chaudhary Charan Singh University,Meerut(U.P).I Have much more interest in the filled of Programming.My Favourite Programming language is Python.I Also know Much more About HTML,CSS,BOOTSTRAP4,Javascript,PHP  etc.</p>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Work Experince</h1>
+    
+    {% for work in work_experience %}
+    <div>
+        <h2>{{ work.title }}</h2>
+        <p><small>{{ work.workplace }}</small></p>
+        <p>{{ work.discription }}</p>
+        <p><small>Starting date: {{ work.starting_date|date:"F d, Y" }} | Ending date: {{ work.ending_date|date:"F d, Y" }}</small></p>
+    </div><hr>
+    {% endfor %}
+
+</div>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Certificates</h1>
+    
+    {% for cert in certificate %}
+    <div>
+        <h2>{{ cert.title }}</h2>
+        <p><small>Url: <a href="{{ cert.url }}">{{ cert.url }}</a></small></p>
+        <p>{{ cert.discription }}</p>
+        <p><small>Issue date: {{ cert.issue_date|date:"F d, Y" }}</small></p>
+    </div><hr>
+    {% endfor %}
+
+</div>
+
+<div class="container mt-5 mb-5">
+    <h1 class="text-center mb-5">Projects</h1>
+    
+    {% for proj in project %}
+    <div>
+        <h2>{{ proj.title }}</h2>
+
+        {% if proj.url %}
+            <p><small>Url: <a href="{{ proj.url }}">{{ proj.url }}</a></small></p>
+        {% endif %}
+
+        <p>{{ proj.discription }}</p>
+        <p><small>Starting date: {{ proj.starting_date|date:"F d, Y" }} | Ending date: {{ proj.ending_date|date:"F d, Y" }}</small></p>
+    </div><hr>
+    {% endfor %}
+
+</div>
+{% endblock %}
+
+<!-- Footer section -->
+<div class="footer pt-5">
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <p class="text-center" style="font-size: 26px; margin-bottom: -1px;">Made with <i class="fas fa-heart" style="font-size: 18px; color: red;"></i></p>
+                <ul class="list-unstyled list-inline social text-center">
+                    <li class="list-inline-item mr-3"><a href="https://github.com/Akhilesh9376" target="_blank"><i class="fab fa-github"></i></a></li>
+                    <li class="list-inline-item mr-3"><a href="https://www.facebook.com/akhilesh.yadav.18488169" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                    <li class="list-inline-item mr-3"><a href="https://www.linkedin.com/in/akhilesh-yadav-5b119b1ba/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li class="list-inline-item"><a href="mailto:akhileshyadavkokta@gmail.com" target="_blank"><i class="far fa-envelope"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+ <footer class="footer">
+      <div class="container">
+      <p>Made With <span> <i class="fas fa-heart" style="font-size: 18px; color: red;"></i></span></p>
+      <ul class="list-unstyled list-inline social text-center">
+        <li class="list-inline-item mr-3"><a href="https://github.com/Akhilesh9376/akhilesh-yadav" target="_blank"><i class="fab fa-github"></i></a></li>
+        <li class="list-inline-item mr-3"><a href="https://www.instagram.com/akhill_90/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <li class="list-inline-item mr-3"><a href="https://www.facebook.com/akhilesh.yadav.18488169" target="_blank"><i class="fab fa-facebook"></i></a></li>
+        <li class="list-inline-item"><a href="mailto:akhileshyadavkokta1@gmail.com" target="_blank"><i class="far fa-envelope"></i></a></li>
+    </ul>
+      </div>
+    </footer>

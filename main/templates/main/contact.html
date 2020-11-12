@@ -1,0 +1,37 @@
+{% extends 'main/index.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Mysite | Contact{% endblock %}
+
+{% block style %}
+<style>
+    .asteriskField {
+        color: red;
+    }
+</style>
+{% endblock %}
+
+{% block main-content %}
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="container-fluid alert alert-{{ message.tags }}">
+            <div class="container message">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <span id="id_message">{{ message }}</span>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
+
+<div class="container mt-5 mb-5" style="max-width: 600px;">
+    <h1 class="text-center mb-5"><b>Contact Form</b></h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-success mt-3">Submit</button>
+    </form>
+</div>
+
+
+{% endblock %}
