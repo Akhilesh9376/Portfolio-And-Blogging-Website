@@ -30,7 +30,7 @@ SECRET_KEY = 'ywnhio_rkn7u%j42#6l+jk)4!msv9b&-jd_+*gy7dw$iy@$)aw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = (os.environ.get('DEBUG_MYSITE')=='True')
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS_MYSITE')]
 # ALLOWED_HOSTS = ['akhill.herokuapp.com']
