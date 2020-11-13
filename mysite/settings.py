@@ -30,8 +30,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY_MYSITE')
 DEBUG = True
 
 # ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS_MYSITE')]
-# ALLOWED_HOSTS = ['akhill.herokuapp.com']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['akhill.herokuapp.com']
+# ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
