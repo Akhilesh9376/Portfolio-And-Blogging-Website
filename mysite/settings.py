@@ -34,7 +34,7 @@ DEBUG = True
 
 # ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS_MYSITE')]
 # ALLOWED_HOSTS = ['akhill.herokuapp.com']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['akhill.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
