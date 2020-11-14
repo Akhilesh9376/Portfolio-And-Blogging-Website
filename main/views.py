@@ -52,7 +52,7 @@ def contact(request):
             'New message from %s' %name,
             'Hi admin, new message form this email address: %s\n\n Message: %s' %(email, message),
             conf_settings.EMAIL_HOST_USER,
-            ['akhileshyadavkoktaa@gmail.com', ],
+            ['akhileshyadavheroku@gmail.com', ],
         ).send()
 
         form.save()
